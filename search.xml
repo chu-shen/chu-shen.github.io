@@ -92,7 +92,7 @@
 <ol>
 <li><p>不要删除旧包后立马上传分发</p>
 </li>
-<li><p>确认旧包已完全删除，未隐藏(find / -name PARCELNAME.parcel)，否则不会分发新包，而是分发“已删除”的旧包。旧包在隐藏的<code>.flood</code>目录下<br> ![[../../../../../../900其他/920Image/csimg/c/s/i/m/g/Pasted image 20210630104112.png]]</p>
+<li><p>确认旧包已完全删除，未隐藏(find / -name PARCELNAME.parcel)，否则不会分发新包，而是分发“已删除”的旧包。旧包在隐藏的<code>.flood</code>目录下<br> <img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210630104112.png" alt="Pasted image 20210630104112"></p>
 </li>
 </ol>
 <p>==上述操作对远程分发同样有效。==</p>
@@ -114,7 +114,7 @@
 <hr>
 <h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>略</p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>首先观察CSD结构，如下图所示：</p>
-<p><img src="../../../../../../900%E5%85%B6%E4%BB%96/920Image/csimg/c/s/i/m/g/csd.png" alt="../../../../../../900其他/920Image/csimg/c/s/i/m/g/csd.png"></p>
+<p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/csd.png" alt="../../../../../../900其他/920Image/csimg/c/s/i/m/g/csd.png"></p>
 <p>主要有三大块：</p>
 <ol>
 <li><p>descriptor，json形式的配置文件，用于CM组件界面，其包括两部分</p>
@@ -207,7 +207,8 @@
 <p><strong>制作manifest.json</strong></p>
 <p> <code>./cm_ext/make_manifest/make_manifest.py ./ELK/</code></p>
 <p><code>./ELK目录下有对应的parcel包</code></p>
-<p>最后完整的目录如下：<br>![[../../../../../../900其他/920Image/csimg/c/s/i/m/g/Pasted image 20210629165244.png]]</p>
+<p>最后完整的目录如下：</p>
+<p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210629165244.png"></p>
 <h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><ol>
 <li>Validate a parcel.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -p parcel.json</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -p ./ATLAS-2.0.0-CDH6.3.2/meta/parcel.json</span><br></pre></td></tr></table></figure>
 </li>
