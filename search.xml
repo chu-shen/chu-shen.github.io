@@ -226,7 +226,7 @@
 <hr>
 <h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>略</p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>首先观察CSD结构，如下图所示：</p>
-<p>![[../../../../../../900其他/920Image/csimg/c/s/i/m/g/csd.png]]</p>
+<p><img src="../../../../../../900%E5%85%B6%E4%BB%96/920Image/csimg/c/s/i/m/g/csd.png" alt="../../../../../../900其他/920Image/csimg/c/s/i/m/g/csd.png"></p>
 <p>主要有三大块：</p>
 <ol>
 <li><p>descriptor，json形式的配置文件，用于CM组件界面，其包括两部分</p>
