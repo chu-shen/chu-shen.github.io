@@ -20,18 +20,20 @@
     var CONFIG = {"hostname":"chushen.xyz","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="分享日常">
-<meta property="og:type" content="website">
-<meta property="og:title" content="初">
-<meta property="og:url" content="https://chushen.xyz/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/index.html">
+  <meta name="description" content="parcel包在使用时需要特别注意的地方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="parcel包使用注意事项">
+<meta property="og:url" content="https://chushen.xyz/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/index.html">
 <meta property="og:site_name" content="初">
-<meta property="og:description" content="分享日常">
+<meta property="og:description" content="parcel包在使用时需要特别注意的地方">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-06-30T02:25:00.000Z">
+<meta property="article:modified_time" content="2021-06-30T04:22:16.669Z">
 <meta property="article:author" content="初神">
-<meta property="article:tag" content="大数据,可视化,日常">
+<meta property="article:tag" content="parcel">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://chushen.xyz/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/">
+<link rel="canonical" href="https://chushen.xyz/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
 
 
 <script id="page-configurations">
@@ -39,12 +41,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>标签: 方法论 | 初</title>
+  <title>parcel包使用注意事项 | 初</title>
   
 
 
@@ -196,91 +198,159 @@
         <div class="content-wrap">
           
 
-          <div class="content tag">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h2 class="collection-header">方法论
-          <small>标签</small>
-        </h2>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chushen.xyz/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="初神">
+      <meta itemprop="description" content="分享日常">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="初">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          parcel包使用注意事项
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-06-30 10:25:00 / 修改时间：12:22:16" itemprop="dateCreated datePublished" datetime="2021-06-30T10:25:00+08:00">2021-06-30</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/cdh/" itemprop="url" rel="index"><span itemprop="name">cdh</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">parcel包在使用时需要特别注意的地方</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+        <p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
+<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
+<hr>
+<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><p>如果在CM界面上无法对parcel包进行正确的操作，可以使用<a target="_blank" rel="noopener" href="https://archive.cloudera.com/cm6/6.3.1/generic/jar/cm_api/apidocs/resource_ParcelResource.html">对应API</a>。</p>
+<h2 id="分发"><a href="#分发" class="headerlink" title="分发"></a>分发</h2><h3 id="远程存储库分发"><a href="#远程存储库分发" class="headerlink" title="远程存储库分发"></a>远程存储库分发</h3><p>当采用httpd进行parcel分发时，如果遇到哈希验证失败的问题：</p>
+<ol>
+<li><p>检查/etc/httpd/conf/httpd.conf是否配置.parcel</p>
+</li>
+<li><p>重启httpd、cloudera-scm-server</p>
+</li>
+<li><p>低级错误：校验码不对，manifest错误</p>
+</li>
+</ol>
+<h3 id="本地存储库分发"><a href="#本地存储库分发" class="headerlink" title="本地存储库分发"></a>本地存储库分发</h3><p>重新分发重新打包后的parcel时：</p>
+<ol>
+<li><p>不要删除旧包后立马上传分发</p>
+</li>
+<li><p>确认旧包已完全删除，未隐藏(find / -name PARCELNAME.parcel)，否则不会分发新包，而是分发“已删除”的旧包。旧包在隐藏的<code>.flood</code>目录下<br> ![[../../../../../../900其他/920Image/csimg/c/s/i/m/g/Pasted image 20210630104112.png]]</p>
+</li>
+</ol>
+<p>==上述操作对远程分发同样有效。==</p>
+<h2 id="服务状态"><a href="#服务状态" class="headerlink" title="服务状态"></a>服务状态</h2><p>安装完服务后，可能会显示服务状态不可用，图表也显示不出来，这时候需要重启cm的monitor，等一会儿就行了。</p>
+<p>原因是添加新CSD后未更新。</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\06\29\制作csd\" rel="bookmark">制作csd</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2021\06\15\制作parcel包\" rel="bookmark">制作parcel包</a></div>
+    </li>
+  </ul>
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-30T13:59:00+08:00"
-              content="2021-05-30">
-          05-30
-        </time>
-      </div>
+        
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/30/%E5%8D%A2%E6%9B%BC%E5%8D%A1%E7%89%87%E7%9B%92%E7%AC%94%E8%AE%B0%E6%B3%95/" itemprop="url">
-            <span itemprop="name">卢曼卡片盒笔记法</span>
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>chushen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://chushen.xyz/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="parcel包使用注意事项">https://chushen.xyz/2021/06/30/parcel包使用注意事项/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+        
+
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
+
+    <div class="social-list">
+
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
+            </span>
+
+            <span class="label">RSS</span>
           </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-30T13:15:00+08:00"
-              content="2021-05-30">
-          05-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/30/GTD%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/" itemprop="url">
-            <span itemprop="name">GTD时间管理法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-05-30T13:13:00+08:00"
-              content="2021-05-30">
-          05-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/" itemprop="url">
-            <span itemprop="name">杜威十进分类法</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        </div>
     </div>
   </div>
-  
-  
-  
 
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/parcel/" rel="tag"># parcel</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/06/29/%E5%88%B6%E4%BD%9Ccsd/" rel="prev" title="制作csd">
+      <i class="fa fa-chevron-left"></i> 制作csd
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 
@@ -333,6 +403,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lt-tp-frontmatter-title-gt"><span class="nav-number">1.</span> <span class="nav-text">&lt;%+ tp.frontmatter.title %&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%8F%91"><span class="nav-number">1.1.</span> <span class="nav-text">分发</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%86%E5%8F%91"><span class="nav-number">1.1.1.</span> <span class="nav-text">远程存储库分发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E5%BA%93%E5%88%86%E5%8F%91"><span class="nav-number">1.1.2.</span> <span class="nav-text">本地存储库分发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="nav-number">1.2.</span> <span class="nav-text">服务状态</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
