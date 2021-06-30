@@ -73,118 +73,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卢曼卡片盒笔记法</title>
-    <url>/2021/05/30/%E5%8D%A2%E6%9B%BC%E5%8D%A1%E7%89%87%E7%9B%92%E7%AC%94%E8%AE%B0%E6%B3%95/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><p><a href="https://zettelkasten.de/introduction/zh/">卢曼卡片盒笔记法介绍 (Introduction to the Zettelkasten Method) • Zettelkasten Method</a><br>This is a Chinese translation to Sascha’s <a href="https://zettelkasten.de/introduction/">Introduction to the Zettelkasten Method</a>, created and generously provided to us by <a href="https://www.zhihu.com/people/cai-zhi-xiang">Zhixiang Cai</a> who holds a Ph.D in Oil and Gas Well Engineering, is a programmer, and loves knowledge management.</p>
-<p><a href="https://zettelkasten.de/introduction/">English Original</a> • Chinese Translation</p>
-<hr>
-<p>术语回顾</p>
-<ul>
-<li><strong>卡片盒笔记系统</strong>：英文/德语 Zettelkasten，将笔记相互连接形成一个网状结构的超文本笔记系统，它是一个工具，是你的伙伴。</li>
-<li><strong>卡片盒笔记法</strong>：英文 Zettelkasten Method，建立卢曼笔记系统用到的的一些具体方法</li>
-<li><strong>笔记卡片</strong>：英文/德语 Zettel，原指一张用来记录笔记的小纸片，现指使用卢曼笔记法记录的一条单独的笔记</li>
-<li><strong>想法</strong>：英文 Thought，卢曼笔记法要求每条笔记只记录一个 thought，thought 在中文中含义非常丰富，可以是一个术语、概念、理论、看法、点子，突然的灵感等等，这些在本文中统称为“想法”</li>
-<li><strong>思之想网</strong>：英文 Web of Thought，由各种想法互相连接形成的网络，卢曼笔记系统就是一张思想之网</li>
-<li><strong>链接</strong>：英文 Link，名词，指代每条笔记的 ID</li>
-<li><strong>连接</strong>：英文 Link/Connect，动词，指将一条笔记与另一条笔记连接起来的动作/操作</li>
-</ul>
-<p><strong>以下为文章正文</strong>。</p>
-<hr>
-<p>你看这篇介绍的原因是什么？你可能在工作中遇到了迫切需要解决的问题，可能被硕士论文压得喘不过来气，你想要提升你的博客水平，想写一本书，或者想在科研上更进一步。但是有一点需要明确，卡片盒笔记法不仅是一个帮助你完成工作或项目的工具，更是管理你生活中所遇到的知识的方法。</p>
-<p>卡片盒笔记法可以放大你在知识型工作(knowledge work)中的努力。它非常有效，且乐趣十足。有人甚至认为它在成瘾性上可以媲美魔兽世界，让人欲罢不能。</p>
-<p>就像游泳一样，如果你不下水，你永远无法体会游泳的乐趣。如果你只是抱着浮板在水中扑腾，那么游泳对你来说也是一件糟糕的事。但是，如果你掌握了游泳技巧，并尝试在水中滑行，那你一定能感受到游泳的魅力。</p>
-<p>卡片盒笔记法也需要练习。起初你可能会觉得怎么做都不对，但是只要你稍加练习并保持耐心，你肯定会对卡片盒笔记法回馈给你的知识珍宝感到惊讶。</p>
-<p>本篇指南是引导你迈出通向<em>卓越(卡片盒笔记系统世界)</em> 的第一步，遵循本文的方法，你的卡片盒笔记系统你提供一个在知识的海洋中奋勇前进的有力工具。</p>
-<p>对于那些不熟悉卡片盒笔记系统，我会这样定义它：</p>
-<blockquote>
-<p>卡片盒笔记系统是一款个性化的，用于思考和写作的工具。它具有超文本(hypertext)的特点，让你的所思所想互相连接形成网络。与其他系统不同的是，你创造的是一张由你的想法、看法、灵感、或者遇到的具体的知识组成的思想之网(web of thoughts)，而不是孤立的笔记。它强调笔记之间的连接关系，而非把所有笔记堆在一起。</p>
-</blockquote>
-<p>我们今天所知的卡片盒笔记法，由尼克拉斯-卢曼(Niklas Luhmann) 创造并发扬光大，它是目前最强大的思考和笔记工具。</p>
-<h2 id="卢曼的卡片盒笔记系统"><a href="#卢曼的卡片盒笔记系统" class="headerlink" title="卢曼的卡片盒笔记系统"></a>卢曼的卡片盒笔记系统</h2><p>尼克拉斯-卢曼是一位高产的社会学家，他出版了50本专著和600篇论文。他的生产力不是已发表的作品能够体现的，他的遗产中还有150份未完成的手稿，其中一份稿件的长度甚至超过1000页。当然，这些成就不是他一个人的取得的，他还有一位得力的伙伴——Zettelkasten。</p>
-<p>卢曼曾说，他的生产力源自于他与卡片盒笔记系统的合作。践行 卡片盒笔记法 的人对此一定很有共鸣。卢曼的卡片盒笔记系统是记有笔记的纸质小卡片的集合，但是这些卡片被做了一点点改变：它们是<strong>超文本</strong>。利用超文本的笔记，卢曼能够以合理的时间和精力浏览抽屉柜中的所有存放笔记卡片。但是，“合理”二字仅对卢曼而言，他痴迷于社会学理论，是一个精力十足的工作狂。</p>
-<blockquote>
-<p>译者注：超文本中的文字包含有可以连接到其他字段或者文档的超链接，允许从当前阅读位置直接切换到超链接所指向的文字。——<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC">超文本 - 维基百科，自由的百科全书</a></p>
-</blockquote>
-<p>超文本内的在属性要求它可以通过链接从一段文字跳转到链接所指向的另一段文字。在维基百科上的某个页面下，你只需点击页面中的一个链接，就可以进入新的页面。如果超文本不是网页而是纸质的卡片，则需要付出更多的精力来跟随(follow)一个链接进入新的卡片。另外，你还需要一个入口，这个入口类似于维基百科的搜索框。卢曼创造了他的 Zettelkasten，并设计了进入卡片盒笔记系统的入口和一整套方法论，这让它他能够以一种高效的方式从一条笔记冲浪到另一条笔记。</p>
-<p>即便如此，使用纸质的卡片盒笔记系统也是比较困难和耗费精力的（想象以下你要从几万张卡片里找到你需要的某些卡片）。我们比卢曼幸运，可以使用强大的数字工具。因此，我们不需要是卢曼一样的工作狂，也能从卡片盒笔记法中获益。</p>
-<h3 id="我们为什么对卢曼的卡片盒笔记系统如此感兴趣？"><a href="#我们为什么对卢曼的卡片盒笔记系统如此感兴趣？" class="headerlink" title="我们为什么对卢曼的卡片盒笔记系统如此感兴趣？"></a>我们为什么对卢曼的卡片盒笔记系统如此感兴趣？</h3><p>首先，幻想以下，如果能像卢曼一样高产意味着什么(50本专著、600篇论文和150分未完成的手稿)？卢曼的卡片盒笔记系统激励着人们，<em>似乎</em>掌握了这个方法也能提高自己的生产力，这也是为什么人们对他独特的创作方式越来越感兴趣的原因。</p>
-<p>其次，卢曼的卡片盒笔记系统的确能够对常规的笔记法和知识型工作(knowledge work)的方法有相当大的改进。它可以提高你的效率，让你用更少的时间产出更多的成果。它主要从以下几方面改进常规的笔记法：</p>
-<ol>
-<li><strong>让我们的想法互相之间更好地建立联系</strong>。卡片盒笔记系统的超文本性质是我们能够将所思所想，包括但不限于概念、术语、灵感、对事情的看法、对模型的认识以及模型参数等等建立联系。而常规笔记法，比如将笔记写在笔记本上，我们很难将记录在第一页的想法与记录在倒数第五页的想法建立可以直接跳转的明确的联系。而想法之间的相互联系有助于产生创新的见解(insight)，创新不是无源之水无本之木，创新是各种想法互相联系时产生的意想不到的结果。</li>
-<li><strong>提高我们的工作效率</strong>。卡片盒笔记法通过提供明确的指导来简化我们的工作流程。明确的流程反过来又会减少使用该方法的难度。在使用卡片盒笔记系统来管理笔记的过程中，我们会感觉到效率的提高。我甚至每周都会有两天时间将卡片盒笔记系统作为我的首要任务，让自己沉浸于写卡片盒笔记的 *心流(flow)*之中。</li>
-<li><strong>不再浪费我们的付出</strong>。即便你的笔记无法用于当下正在做的事情，你也会未来的项目储备知识，至少会提高你对该主题相关信息的处理深度。因为你可以很轻松的根据笔记之间的联系找到过去记的笔记。</li>
-<li><strong>让我们解决更复杂的问题</strong>。处理复杂的问题时，你很难一次性将它全部解决。卡片盒笔记法可以让你集中精力处理问题的一小部分，然后再退一步，用全景的眼光去看这个问题。</li>
-<li><strong>我们的笔记不会混乱</strong>。常规的笔记法，时间长了会变成臃肿不堪乱成一团。而卡片盒笔记系统则会根据你所要解决的问题的自动调整自己的规模。这是卢曼提到的<a href="https://luhmann.surge.sh/communicating-with-slip-boxes">内生长(internal growth)</a>，我更愿意将其翻译为<strong>有机生长</strong>(organic growth，寓意像生命体一样自然生长)。</li>
-<li><strong>让写作更容易，更顺畅，更有条理和说服力</strong>。写作和思考的一个主要问题是，我们很难长时间保持写作的思绪(line of thought)不断。冥想时尚且很难将注意力集中于呼吸这样简单的事情，更不用说为了写一篇论文而在几周甚至几个月里都思考同一个问题。而Z卡片盒笔记法以帮你牢牢抓住你对问题的各种想法，并让这些想法保持活力不会丢失。</li>
-</ol>
-<p>为了有效的解决解决问题，我们必须记笔记。用卢曼的话说：</p>
-<blockquote>
-<p>思考一下，我们要用写下的东西来做什么？当然，开始时我们做的笔记大部分都是垃圾。但是，我们所受的教育期望我们从所做的事情中得到一些有用的东西，如果没有任何有用的结果，我们很快就会失去信心。我们应该反思，是否对笔记进行了管理，以及如何有效的管理这些笔记，以便未来可以查阅。</p>
-</blockquote>
-<p>更多内容请参考原文</p>
-]]></content>
-      <categories>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>方法论</tag>
-        <tag>笔记</tag>
-        <tag>Zettelkasten</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>杜威十进分类法</title>
-    <url>/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
-<h2 id="目录体系"><a href="#目录体系" class="headerlink" title="目录体系"></a>目录体系</h2><p>000　总论</p>
-<p>100　哲学</p>
-<p>200　宗教</p>
-<p>300　社会科学</p>
-<p>400　语言</p>
-<p>500　自然科学和数学</p>
-<p>600　技术（应用科学）</p>
-<p>700　艺术、美术和装饰艺术</p>
-<p>800　文学</p>
-<p>900　地理、历史及辅助学科</p>
-<p>DC第20版共 4卷，除主表外，还包括附表（辅助表）、索引及使用手册等。</p>
-<p>附表包括：</p>
-<p>①标准<a href="https://baike.baidu.com/item/%E5%A4%8D%E5%88%86%E8%A1%A8">复分表</a>，</p>
-<p>②地区复分表，</p>
-<p>③文学复分表，</p>
-<p>④语言复分表，</p>
-<p>⑤人种、种族、民族复分表，</p>
-<p>⑥语种复分表，</p>
-<p>⑦人物复分表。</p>
-<p><a href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E7%AC%A6%E5%8F%B7">标记符号</a></p>
-<p>DC采用阿拉伯数字作标记符号，并采用小数制（即十进制）的<a href="https://baike.baidu.com/item/%E5%B1%82%E7%B4%AF%E6%A0%87%E8%AE%B0%E5%88%B6/53941462">层累标记制</a>。以三位数(000～999)形成前三级的等级结构。在三位数中，凡带“0” 的号码均表示总论性类目：后二位为“0” 的号码表示一级类（大类），末一位为“0” 的号码表示二级类，凡末尾不带“0” 的三位数号码均属三级类。凡在三位数之后展开的号码，均须在三位数后面加一小数点隔开。</p>
-<p>例如：</p>
-<p>600　应用科学</p>
-<p>630　农业</p>
-<p>631　农业经营</p>
-<p>631.5　作物栽培</p>
-<h2 id="分类特点"><a href="#分类特点" class="headerlink" title="分类特点"></a>分类特点</h2><p>①体系结构完整、严谨，类目详尽，层次清楚，易于理解，便于按学科进行检索。</p>
-<p>②采用严格的层累标记制，类号等级分明，具有较强的助记性，但有时号码过于冗长。</p>
-<p>③首创仿分、复分等具有组配性质的编号法。</p>
-<p>④最先为分类表编配详细的相关索引，提供一条简便的字顺检索的途径。</p>
-<p>⑤ 拥有实力雄厚的管理机构，定期修订，使分类法不断得到更新。</p>
-]]></content>
-      <categories>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>方法论</tag>
-        <tag>笔记</tag>
-        <tag>分类法</tag>
-        <tag>杜威十进制分类法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>parcel包使用注意事项</title>
     <url>/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
     <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
@@ -339,6 +227,118 @@
       <tags>
         <tag>parcel</tag>
         <tag>cdh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杜威十进分类法</title>
+    <url>/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/</url>
+    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
+<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
+<hr>
+<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
+<h2 id="目录体系"><a href="#目录体系" class="headerlink" title="目录体系"></a>目录体系</h2><p>000　总论</p>
+<p>100　哲学</p>
+<p>200　宗教</p>
+<p>300　社会科学</p>
+<p>400　语言</p>
+<p>500　自然科学和数学</p>
+<p>600　技术（应用科学）</p>
+<p>700　艺术、美术和装饰艺术</p>
+<p>800　文学</p>
+<p>900　地理、历史及辅助学科</p>
+<p>DC第20版共 4卷，除主表外，还包括附表（辅助表）、索引及使用手册等。</p>
+<p>附表包括：</p>
+<p>①标准<a href="https://baike.baidu.com/item/%E5%A4%8D%E5%88%86%E8%A1%A8">复分表</a>，</p>
+<p>②地区复分表，</p>
+<p>③文学复分表，</p>
+<p>④语言复分表，</p>
+<p>⑤人种、种族、民族复分表，</p>
+<p>⑥语种复分表，</p>
+<p>⑦人物复分表。</p>
+<p><a href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E7%AC%A6%E5%8F%B7">标记符号</a></p>
+<p>DC采用阿拉伯数字作标记符号，并采用小数制（即十进制）的<a href="https://baike.baidu.com/item/%E5%B1%82%E7%B4%AF%E6%A0%87%E8%AE%B0%E5%88%B6/53941462">层累标记制</a>。以三位数(000～999)形成前三级的等级结构。在三位数中，凡带“0” 的号码均表示总论性类目：后二位为“0” 的号码表示一级类（大类），末一位为“0” 的号码表示二级类，凡末尾不带“0” 的三位数号码均属三级类。凡在三位数之后展开的号码，均须在三位数后面加一小数点隔开。</p>
+<p>例如：</p>
+<p>600　应用科学</p>
+<p>630　农业</p>
+<p>631　农业经营</p>
+<p>631.5　作物栽培</p>
+<h2 id="分类特点"><a href="#分类特点" class="headerlink" title="分类特点"></a>分类特点</h2><p>①体系结构完整、严谨，类目详尽，层次清楚，易于理解，便于按学科进行检索。</p>
+<p>②采用严格的层累标记制，类号等级分明，具有较强的助记性，但有时号码过于冗长。</p>
+<p>③首创仿分、复分等具有组配性质的编号法。</p>
+<p>④最先为分类表编配详细的相关索引，提供一条简便的字顺检索的途径。</p>
+<p>⑤ 拥有实力雄厚的管理机构，定期修订，使分类法不断得到更新。</p>
+]]></content>
+      <categories>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>方法论</tag>
+        <tag>笔记</tag>
+        <tag>分类法</tag>
+        <tag>杜威十进制分类法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>卢曼卡片盒笔记法</title>
+    <url>/2021/05/30/%E5%8D%A2%E6%9B%BC%E5%8D%A1%E7%89%87%E7%9B%92%E7%AC%94%E8%AE%B0%E6%B3%95/</url>
+    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
+<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
+<hr>
+<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><p><a href="https://zettelkasten.de/introduction/zh/">卢曼卡片盒笔记法介绍 (Introduction to the Zettelkasten Method) • Zettelkasten Method</a><br>This is a Chinese translation to Sascha’s <a href="https://zettelkasten.de/introduction/">Introduction to the Zettelkasten Method</a>, created and generously provided to us by <a href="https://www.zhihu.com/people/cai-zhi-xiang">Zhixiang Cai</a> who holds a Ph.D in Oil and Gas Well Engineering, is a programmer, and loves knowledge management.</p>
+<p><a href="https://zettelkasten.de/introduction/">English Original</a> • Chinese Translation</p>
+<hr>
+<p>术语回顾</p>
+<ul>
+<li><strong>卡片盒笔记系统</strong>：英文/德语 Zettelkasten，将笔记相互连接形成一个网状结构的超文本笔记系统，它是一个工具，是你的伙伴。</li>
+<li><strong>卡片盒笔记法</strong>：英文 Zettelkasten Method，建立卢曼笔记系统用到的的一些具体方法</li>
+<li><strong>笔记卡片</strong>：英文/德语 Zettel，原指一张用来记录笔记的小纸片，现指使用卢曼笔记法记录的一条单独的笔记</li>
+<li><strong>想法</strong>：英文 Thought，卢曼笔记法要求每条笔记只记录一个 thought，thought 在中文中含义非常丰富，可以是一个术语、概念、理论、看法、点子，突然的灵感等等，这些在本文中统称为“想法”</li>
+<li><strong>思之想网</strong>：英文 Web of Thought，由各种想法互相连接形成的网络，卢曼笔记系统就是一张思想之网</li>
+<li><strong>链接</strong>：英文 Link，名词，指代每条笔记的 ID</li>
+<li><strong>连接</strong>：英文 Link/Connect，动词，指将一条笔记与另一条笔记连接起来的动作/操作</li>
+</ul>
+<p><strong>以下为文章正文</strong>。</p>
+<hr>
+<p>你看这篇介绍的原因是什么？你可能在工作中遇到了迫切需要解决的问题，可能被硕士论文压得喘不过来气，你想要提升你的博客水平，想写一本书，或者想在科研上更进一步。但是有一点需要明确，卡片盒笔记法不仅是一个帮助你完成工作或项目的工具，更是管理你生活中所遇到的知识的方法。</p>
+<p>卡片盒笔记法可以放大你在知识型工作(knowledge work)中的努力。它非常有效，且乐趣十足。有人甚至认为它在成瘾性上可以媲美魔兽世界，让人欲罢不能。</p>
+<p>就像游泳一样，如果你不下水，你永远无法体会游泳的乐趣。如果你只是抱着浮板在水中扑腾，那么游泳对你来说也是一件糟糕的事。但是，如果你掌握了游泳技巧，并尝试在水中滑行，那你一定能感受到游泳的魅力。</p>
+<p>卡片盒笔记法也需要练习。起初你可能会觉得怎么做都不对，但是只要你稍加练习并保持耐心，你肯定会对卡片盒笔记法回馈给你的知识珍宝感到惊讶。</p>
+<p>本篇指南是引导你迈出通向<em>卓越(卡片盒笔记系统世界)</em> 的第一步，遵循本文的方法，你的卡片盒笔记系统你提供一个在知识的海洋中奋勇前进的有力工具。</p>
+<p>对于那些不熟悉卡片盒笔记系统，我会这样定义它：</p>
+<blockquote>
+<p>卡片盒笔记系统是一款个性化的，用于思考和写作的工具。它具有超文本(hypertext)的特点，让你的所思所想互相连接形成网络。与其他系统不同的是，你创造的是一张由你的想法、看法、灵感、或者遇到的具体的知识组成的思想之网(web of thoughts)，而不是孤立的笔记。它强调笔记之间的连接关系，而非把所有笔记堆在一起。</p>
+</blockquote>
+<p>我们今天所知的卡片盒笔记法，由尼克拉斯-卢曼(Niklas Luhmann) 创造并发扬光大，它是目前最强大的思考和笔记工具。</p>
+<h2 id="卢曼的卡片盒笔记系统"><a href="#卢曼的卡片盒笔记系统" class="headerlink" title="卢曼的卡片盒笔记系统"></a>卢曼的卡片盒笔记系统</h2><p>尼克拉斯-卢曼是一位高产的社会学家，他出版了50本专著和600篇论文。他的生产力不是已发表的作品能够体现的，他的遗产中还有150份未完成的手稿，其中一份稿件的长度甚至超过1000页。当然，这些成就不是他一个人的取得的，他还有一位得力的伙伴——Zettelkasten。</p>
+<p>卢曼曾说，他的生产力源自于他与卡片盒笔记系统的合作。践行 卡片盒笔记法 的人对此一定很有共鸣。卢曼的卡片盒笔记系统是记有笔记的纸质小卡片的集合，但是这些卡片被做了一点点改变：它们是<strong>超文本</strong>。利用超文本的笔记，卢曼能够以合理的时间和精力浏览抽屉柜中的所有存放笔记卡片。但是，“合理”二字仅对卢曼而言，他痴迷于社会学理论，是一个精力十足的工作狂。</p>
+<blockquote>
+<p>译者注：超文本中的文字包含有可以连接到其他字段或者文档的超链接，允许从当前阅读位置直接切换到超链接所指向的文字。——<a href="https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC">超文本 - 维基百科，自由的百科全书</a></p>
+</blockquote>
+<p>超文本内的在属性要求它可以通过链接从一段文字跳转到链接所指向的另一段文字。在维基百科上的某个页面下，你只需点击页面中的一个链接，就可以进入新的页面。如果超文本不是网页而是纸质的卡片，则需要付出更多的精力来跟随(follow)一个链接进入新的卡片。另外，你还需要一个入口，这个入口类似于维基百科的搜索框。卢曼创造了他的 Zettelkasten，并设计了进入卡片盒笔记系统的入口和一整套方法论，这让它他能够以一种高效的方式从一条笔记冲浪到另一条笔记。</p>
+<p>即便如此，使用纸质的卡片盒笔记系统也是比较困难和耗费精力的（想象以下你要从几万张卡片里找到你需要的某些卡片）。我们比卢曼幸运，可以使用强大的数字工具。因此，我们不需要是卢曼一样的工作狂，也能从卡片盒笔记法中获益。</p>
+<h3 id="我们为什么对卢曼的卡片盒笔记系统如此感兴趣？"><a href="#我们为什么对卢曼的卡片盒笔记系统如此感兴趣？" class="headerlink" title="我们为什么对卢曼的卡片盒笔记系统如此感兴趣？"></a>我们为什么对卢曼的卡片盒笔记系统如此感兴趣？</h3><p>首先，幻想以下，如果能像卢曼一样高产意味着什么(50本专著、600篇论文和150分未完成的手稿)？卢曼的卡片盒笔记系统激励着人们，<em>似乎</em>掌握了这个方法也能提高自己的生产力，这也是为什么人们对他独特的创作方式越来越感兴趣的原因。</p>
+<p>其次，卢曼的卡片盒笔记系统的确能够对常规的笔记法和知识型工作(knowledge work)的方法有相当大的改进。它可以提高你的效率，让你用更少的时间产出更多的成果。它主要从以下几方面改进常规的笔记法：</p>
+<ol>
+<li><strong>让我们的想法互相之间更好地建立联系</strong>。卡片盒笔记系统的超文本性质是我们能够将所思所想，包括但不限于概念、术语、灵感、对事情的看法、对模型的认识以及模型参数等等建立联系。而常规笔记法，比如将笔记写在笔记本上，我们很难将记录在第一页的想法与记录在倒数第五页的想法建立可以直接跳转的明确的联系。而想法之间的相互联系有助于产生创新的见解(insight)，创新不是无源之水无本之木，创新是各种想法互相联系时产生的意想不到的结果。</li>
+<li><strong>提高我们的工作效率</strong>。卡片盒笔记法通过提供明确的指导来简化我们的工作流程。明确的流程反过来又会减少使用该方法的难度。在使用卡片盒笔记系统来管理笔记的过程中，我们会感觉到效率的提高。我甚至每周都会有两天时间将卡片盒笔记系统作为我的首要任务，让自己沉浸于写卡片盒笔记的 *心流(flow)*之中。</li>
+<li><strong>不再浪费我们的付出</strong>。即便你的笔记无法用于当下正在做的事情，你也会未来的项目储备知识，至少会提高你对该主题相关信息的处理深度。因为你可以很轻松的根据笔记之间的联系找到过去记的笔记。</li>
+<li><strong>让我们解决更复杂的问题</strong>。处理复杂的问题时，你很难一次性将它全部解决。卡片盒笔记法可以让你集中精力处理问题的一小部分，然后再退一步，用全景的眼光去看这个问题。</li>
+<li><strong>我们的笔记不会混乱</strong>。常规的笔记法，时间长了会变成臃肿不堪乱成一团。而卡片盒笔记系统则会根据你所要解决的问题的自动调整自己的规模。这是卢曼提到的<a href="https://luhmann.surge.sh/communicating-with-slip-boxes">内生长(internal growth)</a>，我更愿意将其翻译为<strong>有机生长</strong>(organic growth，寓意像生命体一样自然生长)。</li>
+<li><strong>让写作更容易，更顺畅，更有条理和说服力</strong>。写作和思考的一个主要问题是，我们很难长时间保持写作的思绪(line of thought)不断。冥想时尚且很难将注意力集中于呼吸这样简单的事情，更不用说为了写一篇论文而在几周甚至几个月里都思考同一个问题。而Z卡片盒笔记法以帮你牢牢抓住你对问题的各种想法，并让这些想法保持活力不会丢失。</li>
+</ol>
+<p>为了有效的解决解决问题，我们必须记笔记。用卢曼的话说：</p>
+<blockquote>
+<p>思考一下，我们要用写下的东西来做什么？当然，开始时我们做的笔记大部分都是垃圾。但是，我们所受的教育期望我们从所做的事情中得到一些有用的东西，如果没有任何有用的结果，我们很快就会失去信心。我们应该反思，是否对笔记进行了管理，以及如何有效的管理这些笔记，以便未来可以查阅。</p>
+</blockquote>
+<p>更多内容请参考原文</p>
+]]></content>
+      <categories>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>方法论</tag>
+        <tag>笔记</tag>
+        <tag>Zettelkasten</tag>
       </tags>
   </entry>
 </search>
