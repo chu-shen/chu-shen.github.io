@@ -3,10 +3,7 @@
   <entry>
     <title>GTD时间管理法</title>
     <url>/2021/05/30/GTD%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86%E6%B3%95/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>GTD就是<strong>Getting Things Done</strong>的缩写，意思是“把需要做的事情处理好”，是一个管理时间的方法。由David Allen(戴维·艾伦)于2002年12月31日提出。GTD的核心理念概括就是必须记录下来要做的事，然后整理安排并使自己一一去执行。GTD的五个核心原则是：<strong>收集、整理、组织、回顾、执行</strong>。</p>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>GTD就是<strong>Getting Things Done</strong>的缩写，意思是“把需要做的事情处理好”，是一个管理时间的方法。由David Allen(戴维·艾伦)于2002年12月31日提出。GTD的核心理念概括就是必须记录下来要做的事，然后整理安排并使自己一一去执行。GTD的五个核心原则是：<strong>收集、整理、组织、回顾、执行</strong>。</p>
 <p>GTD的核心理念在于清空大脑，然后一步步按照设定的路线去努力执行。</p>
 <h2 id="核心原则"><a href="#核心原则" class="headerlink" title="核心原则"></a>核心原则</h2><h3 id="总述"><a href="#总述" class="headerlink" title="总述"></a>总述</h3><p>主要原则在于一个人需要通过记录的方式把头脑中的各种任务<strong>移出来</strong>，通过这样的方式，头脑可以不用塞满各种需要完成的事情，而集中精力在正在完成的事情，是一种<strong>消灭压力的高效工作方法</strong>。</p>
 <h3 id="收集"><a href="#收集" class="headerlink" title="收集"></a>收集</h3><p>把任何需要跟踪或者记住或者做的事情记在Allen称之为‘水桶’的地方：一个收件箱，电子邮箱，磁带，笔记本，PDA，或者它们的组合。把你脑子里的任何东西都拿出来放到你的搜集设备里，准备好做下一步的处理。每星期所有的水桶都应该被至少清空一次。</p>
@@ -75,10 +72,7 @@
   <entry>
     <title>parcel包使用注意事项</title>
     <url>/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><p>如果在CM界面上无法对parcel包进行正确的操作，可以使用<a href="https://archive.cloudera.com/cm6/6.3.1/generic/jar/cm_api/apidocs/resource_ParcelResource.html">对应API</a>。</p>
+    <content><![CDATA[<p>如果在CM界面上无法对parcel包进行正确的操作，可以使用<a href="https://archive.cloudera.com/cm6/6.3.1/generic/jar/cm_api/apidocs/resource_ParcelResource.html">对应API</a>。</p>
 <h2 id="分发"><a href="#分发" class="headerlink" title="分发"></a>分发</h2><h3 id="远程存储库分发"><a href="#远程存储库分发" class="headerlink" title="远程存储库分发"></a>远程存储库分发</h3><p>当采用httpd进行parcel分发时，如果遇到哈希验证失败的问题：</p>
 <ol>
 <li><p>检查/etc/httpd/conf/httpd.conf是否配置.parcel</p>
@@ -109,10 +103,7 @@
   <entry>
     <title>制作csd</title>
     <url>/2021/06/29/%E5%88%B6%E4%BD%9Ccsd/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>略</p>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>略</p>
 <h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>首先观察CSD结构，如下图所示：</p>
 <p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/csd.png" alt="../../../../../../900其他/920Image/csimg/c/s/i/m/g/csd.png"></p>
 <p>主要有三大块：</p>
@@ -186,10 +177,7 @@
   <entry>
     <title>制作parcel包</title>
     <url>/2021/06/15/%E5%88%B6%E4%BD%9Cparcel%E5%8C%85/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Parcel的好处及优势这里就不多赘述，详细内容见<a href="https://github.com/cloudera/cm_ext/wiki/Why-you-should-use-parcels">官方文档</a>。</p>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Parcel的好处及优势这里就不多赘述，详细内容见<a href="https://github.com/cloudera/cm_ext/wiki/Why-you-should-use-parcels">官方文档</a>。</p>
 <p>==需要特别注意的是要严格按照命名格式操作。==</p>
 <p>下面对Parcel包的制作进行简单介绍。</p>
 <h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>首先我们要了解Parcel包的结构，详细的内容见<a href="https://github.com/cloudera/cm_ext/wiki/Building-a-parcel">官方文档</a>。</p>
@@ -233,10 +221,7 @@
   <entry>
     <title>杜威十进分类法</title>
     <url>/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
 <h2 id="目录体系"><a href="#目录体系" class="headerlink" title="目录体系"></a>目录体系</h2><p>000　总论</p>
 <p>100　哲学</p>
 <p>200　宗教</p>
@@ -282,10 +267,7 @@
   <entry>
     <title>卢曼卡片盒笔记法</title>
     <url>/2021/05/30/%E5%8D%A2%E6%9B%BC%E5%8D%A1%E7%89%87%E7%9B%92%E7%AC%94%E8%AE%B0%E6%B3%95/</url>
-    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
-<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
-<hr>
-<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><p><a href="https://zettelkasten.de/introduction/zh/">卢曼卡片盒笔记法介绍 (Introduction to the Zettelkasten Method) • Zettelkasten Method</a><br>This is a Chinese translation to Sascha’s <a href="https://zettelkasten.de/introduction/">Introduction to the Zettelkasten Method</a>, created and generously provided to us by <a href="https://www.zhihu.com/people/cai-zhi-xiang">Zhixiang Cai</a> who holds a Ph.D in Oil and Gas Well Engineering, is a programmer, and loves knowledge management.</p>
+    <content><![CDATA[<p><a href="https://zettelkasten.de/introduction/zh/">卢曼卡片盒笔记法介绍 (Introduction to the Zettelkasten Method) • Zettelkasten Method</a><br>This is a Chinese translation to Sascha’s <a href="https://zettelkasten.de/introduction/">Introduction to the Zettelkasten Method</a>, created and generously provided to us by <a href="https://www.zhihu.com/people/cai-zhi-xiang">Zhixiang Cai</a> who holds a Ph.D in Oil and Gas Well Engineering, is a programmer, and loves knowledge management.</p>
 <p><a href="https://zettelkasten.de/introduction/">English Original</a> • Chinese Translation</p>
 <hr>
 <p>术语回顾</p>
