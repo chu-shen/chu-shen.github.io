@@ -6,7 +6,7 @@
   <link href="https://chushen.xyz/atom.xml" rel="self"/>
   
   <link href="https://chushen.xyz/"/>
-  <updated>2021-08-26T01:45:36.353Z</updated>
+  <updated>2021-09-10T02:56:42.267Z</updated>
   <id>https://chushen.xyz/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Microsoft TO DO</title>
+    <link href="https://chushen.xyz/2021/08/18/Microsoft%20TO%20DO/"/>
+    <id>https://chushen.xyz/2021/08/18/Microsoft%20TO%20DO/</id>
+    <published>2021-08-18T08:33:00.000Z</published>
+    <updated>2021-09-10T02:56:42.267Z</updated>
+    
+    <content type="html"><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p><p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p><hr><h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.mazhangjing.com/2020/06/15/mstodo/">我的每日工作流 —— Microsoft TO-DO 使用指北</a></p>]]></content>
+    
+    
+    <summary type="html">本文档</summary>
+    
+    
+    
+    <category term="方法论" scheme="https://chushen.xyz/categories/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    <category term="工作流" scheme="https://chushen.xyz/categories/%E5%B7%A5%E4%BD%9C%E6%B5%81/"/>
+    
+    <category term="ceshi" scheme="https://chushen.xyz/categories/ceshi/"/>
+    
+    <category term="1" scheme="https://chushen.xyz/categories/ceshi/1/"/>
+    
+    <category term="2" scheme="https://chushen.xyz/categories/ceshi/2/"/>
+    
+    
+    <category term="方法论" scheme="https://chushen.xyz/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+    <category term="待办" scheme="https://chushen.xyz/tags/%E5%BE%85%E5%8A%9E/"/>
+    
+    <category term="时间管理/ceshi" scheme="https://chushen.xyz/tags/%E6%97%B6%E9%97%B4%E7%AE%A1%E7%90%86-ceshi/"/>
+    
+  </entry>
   
   <entry>
     <title>parcel包使用注意事项</title>
@@ -54,11 +87,11 @@
     <category term="cdh" scheme="https://chushen.xyz/categories/cdh/"/>
     
     
-    <category term="parcel" scheme="https://chushen.xyz/tags/parcel/"/>
-    
     <category term="cdh" scheme="https://chushen.xyz/tags/cdh/"/>
     
     <category term="csd" scheme="https://chushen.xyz/tags/csd/"/>
+    
+    <category term="parcel" scheme="https://chushen.xyz/tags/parcel/"/>
     
   </entry>
   
@@ -67,7 +100,7 @@
     <link href="https://chushen.xyz/2021/06/15/%E5%88%B6%E4%BD%9Cparcel%E5%8C%85/"/>
     <id>https://chushen.xyz/2021/06/15/%E5%88%B6%E4%BD%9Cparcel%E5%8C%85/</id>
     <published>2021-06-15T01:53:00.000Z</published>
-    <updated>2021-08-26T01:45:25.940Z</updated>
+    <updated>2021-09-14T14:50:11.193Z</updated>
     
     <content type="html"><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Parcel的好处及优势这里就不多赘述，详细内容见<a href="https://github.com/cloudera/cm_ext/wiki/Why-you-should-use-parcels">官方文档</a>。</p><p>==需要特别注意的是要严格按照命名格式操作。==</p><p>下面对Parcel包的制作进行简单介绍。</p><h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>首先我们要了解Parcel包的结构，详细的内容见<a href="https://github.com/cloudera/cm_ext/wiki/Building-a-parcel">官方文档</a>。</p><p>其必须包含两部分内容：</p><ol><li>meta目录。至少包括parcel.json、env.sh。一个是Parcel包的基本信息，一个是环境信息。<br>==注意：在与CDH或其他软件结合使用时，是否需要绑定版本号==</li><li>lib目录。其下就是我们打包的组件存储的位置</li></ol><h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>强烈建议在linux上进行打包，并加上-p参数以保留受保护的信息（如：<strong>软链</strong>、权限等），通过在linux上打包并配置软链、权限……可以避免在control.sh中编写过多的命令，同时避免了非root用户的部分命令的权限问题。</p><p>这一部分需要耐心整理组件安装步骤，抽取出不在组件内（编译后）的内容，比如日志软链，并结合组件的安装进行反复操作。</p><p>不推荐：<del>tar zcvf ATLAS-2.0.0-CDH6.3.2-el7.parcel ATLAS-2.0.0-CDH6.3.2/</del></p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tar zcvfp ECHO-0.0.1-el7.parcel ECHO-0.0.1/</span><br><span class="line">sha1sum ATLAS-2.0.0-CDH6.3.2-el7.parcel &gt; ATLAS-2.0.0-CDH6.3.2-el7.parcel.sha</span><br></pre></td></tr></table></figure><p><strong>制作manifest.json</strong></p><p> <code>./cm_ext/make_manifest/make_manifest.py ./ELK/</code></p><p><code>./ELK目录下有对应的parcel包</code></p><p>最后完整的目录如下：</p><p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210629165244.png"></p><h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><ol><li>Validate a parcel.json file <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -p parcel.json</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -p ./ATLAS-2.0.0-CDH6.3.2/meta/parcel.json</span><br></pre></td></tr></table></figure></li><li>Validate an alternatives.json file <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -a alternatives.json</span></span><br></pre></td></tr></table></figure></li><li>Validate an permissions.json file <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -r permissions.json</span></span><br></pre></td></tr></table></figure></li><li>Validate a parcel directory <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -d CDH-5.0.0-0.cdh5b2.p0.283/</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -d ./ATLAS-2.0.0-CDH6.3.2/</span><br></pre></td></tr></table></figure></li><li>Validate a parcel file <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -f CDH-5.0.0-0.cdh5b2.p0.283-el6.parcel</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -f ATLAS-2.0.0-CDH6.3.2-el7.parcel</span><br></pre></td></tr></table></figure></li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/cloudera/cm_ext/wiki">官方文档</a></p>]]></content>
     
@@ -79,9 +112,9 @@
     <category term="cdh" scheme="https://chushen.xyz/categories/cdh/"/>
     
     
-    <category term="parcel" scheme="https://chushen.xyz/tags/parcel/"/>
-    
     <category term="cdh" scheme="https://chushen.xyz/tags/cdh/"/>
+    
+    <category term="parcel" scheme="https://chushen.xyz/tags/parcel/"/>
     
   </entry>
   

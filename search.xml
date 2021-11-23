@@ -70,37 +70,6 @@
       </tags>
   </entry>
   <entry>
-    <title>parcel包使用注意事项</title>
-    <url>/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
-    <content><![CDATA[<p>如果在CM界面上无法对parcel包进行正确的操作，可以使用<a href="https://archive.cloudera.com/cm6/6.3.1/generic/jar/cm_api/apidocs/resource_ParcelResource.html">对应API</a>。</p>
-<h2 id="分发"><a href="#分发" class="headerlink" title="分发"></a>分发</h2><h3 id="远程存储库分发"><a href="#远程存储库分发" class="headerlink" title="远程存储库分发"></a>远程存储库分发</h3><p>当采用httpd进行parcel分发时，如果遇到哈希验证失败的问题：</p>
-<ol>
-<li><p>检查/etc/httpd/conf/httpd.conf是否配置.parcel</p>
-</li>
-<li><p>重启httpd、cloudera-scm-server</p>
-</li>
-<li><p>低级错误：校验码不对，manifest错误</p>
-</li>
-</ol>
-<h3 id="本地存储库分发"><a href="#本地存储库分发" class="headerlink" title="本地存储库分发"></a>本地存储库分发</h3><p>重新分发重新打包后的parcel时：</p>
-<ol>
-<li><p>不要删除旧包后立马上传分发</p>
-</li>
-<li><p>确认旧包已完全删除，未隐藏(find / -name PARCELNAME.parcel)，否则不会分发新包，而是分发“已删除”的旧包。旧包在隐藏的<code>.flood</code>目录下<br> <img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210630104112.png" alt="Pasted image 20210630104112"></p>
-</li>
-</ol>
-<p>==上述操作对远程分发同样有效。==</p>
-<h2 id="服务状态"><a href="#服务状态" class="headerlink" title="服务状态"></a>服务状态</h2><p>安装完服务后，可能会显示服务状态不可用，图表也显示不出来，这时候需要重启cm的monitor，等一会儿就行了。</p>
-<p>原因是添加新CSD后未更新。</p>
-]]></content>
-      <categories>
-        <category>cdh</category>
-      </categories>
-      <tags>
-        <tag>parcel</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>制作csd</title>
     <url>/2021/06/29/%E5%88%B6%E4%BD%9Ccsd/</url>
     <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>略</p>
@@ -169,99 +138,40 @@
         <category>cdh</category>
       </categories>
       <tags>
-        <tag>parcel</tag>
         <tag>cdh</tag>
         <tag>csd</tag>
+        <tag>parcel</tag>
       </tags>
   </entry>
   <entry>
-    <title>制作parcel包</title>
-    <url>/2021/06/15/%E5%88%B6%E4%BD%9Cparcel%E5%8C%85/</url>
-    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Parcel的好处及优势这里就不多赘述，详细内容见<a href="https://github.com/cloudera/cm_ext/wiki/Why-you-should-use-parcels">官方文档</a>。</p>
-<p>==需要特别注意的是要严格按照命名格式操作。==</p>
-<p>下面对Parcel包的制作进行简单介绍。</p>
-<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>首先我们要了解Parcel包的结构，详细的内容见<a href="https://github.com/cloudera/cm_ext/wiki/Building-a-parcel">官方文档</a>。</p>
-<p>其必须包含两部分内容：</p>
+    <title>parcel包使用注意事项</title>
+    <url>/2021/06/30/parcel%E5%8C%85%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</url>
+    <content><![CDATA[<p>如果在CM界面上无法对parcel包进行正确的操作，可以使用<a href="https://archive.cloudera.com/cm6/6.3.1/generic/jar/cm_api/apidocs/resource_ParcelResource.html">对应API</a>。</p>
+<h2 id="分发"><a href="#分发" class="headerlink" title="分发"></a>分发</h2><h3 id="远程存储库分发"><a href="#远程存储库分发" class="headerlink" title="远程存储库分发"></a>远程存储库分发</h3><p>当采用httpd进行parcel分发时，如果遇到哈希验证失败的问题：</p>
 <ol>
-<li>meta目录。至少包括parcel.json、env.sh。一个是Parcel包的基本信息，一个是环境信息。<br>==注意：在与CDH或其他软件结合使用时，是否需要绑定版本号==</li>
-<li>lib目录。其下就是我们打包的组件存储的位置</li>
+<li><p>检查/etc/httpd/conf/httpd.conf是否配置.parcel</p>
+</li>
+<li><p>重启httpd、cloudera-scm-server</p>
+</li>
+<li><p>低级错误：校验码不对，manifest错误</p>
+</li>
 </ol>
-<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>强烈建议在linux上进行打包，并加上-p参数以保留受保护的信息（如：<strong>软链</strong>、权限等），通过在linux上打包并配置软链、权限……可以避免在control.sh中编写过多的命令，同时避免了非root用户的部分命令的权限问题。</p>
-<p>这一部分需要耐心整理组件安装步骤，抽取出不在组件内（编译后）的内容，比如日志软链，并结合组件的安装进行反复操作。</p>
-<p>不推荐：<del>tar zcvf ATLAS-2.0.0-CDH6.3.2-el7.parcel ATLAS-2.0.0-CDH6.3.2/</del></p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar zcvfp ECHO-0.0.1-el7.parcel ECHO-0.0.1/</span><br><span class="line">sha1sum ATLAS-2.0.0-CDH6.3.2-el7.parcel &gt; ATLAS-2.0.0-CDH6.3.2-el7.parcel.sha</span><br></pre></td></tr></table></figure>
-
-
-<p><strong>制作manifest.json</strong></p>
-<p> <code>./cm_ext/make_manifest/make_manifest.py ./ELK/</code></p>
-<p><code>./ELK目录下有对应的parcel包</code></p>
-<p>最后完整的目录如下：</p>
-<p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210629165244.png"></p>
-<h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><ol>
-<li>Validate a parcel.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -p parcel.json</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -p ./ATLAS-2.0.0-CDH6.3.2/meta/parcel.json</span><br></pre></td></tr></table></figure>
+<h3 id="本地存储库分发"><a href="#本地存储库分发" class="headerlink" title="本地存储库分发"></a>本地存储库分发</h3><p>重新分发重新打包后的parcel时：</p>
+<ol>
+<li><p>不要删除旧包后立马上传分发</p>
 </li>
-<li>Validate an alternatives.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -a alternatives.json</span></span><br></pre></td></tr></table></figure>
+<li><p>确认旧包已完全删除，未隐藏(find / -name PARCELNAME.parcel)，否则不会分发新包，而是分发“已删除”的旧包。旧包在隐藏的<code>.flood</code>目录下<br> <img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210630104112.png" alt="Pasted image 20210630104112"></p>
 </li>
-<li>Validate an permissions.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -r permissions.json</span></span><br></pre></td></tr></table></figure>
-</li>
-<li>Validate a parcel directory <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -d CDH-5.0.0-0.cdh5b2.p0.283/</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -d ./ATLAS-2.0.0-CDH6.3.2/</span><br></pre></td></tr></table></figure>
-</li>
-<li>Validate a parcel file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -f CDH-5.0.0-0.cdh5b2.p0.283-el6.parcel</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -f ATLAS-2.0.0-CDH6.3.2-el7.parcel</span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/cloudera/cm_ext/wiki">官方文档</a></p>
+<p>==上述操作对远程分发同样有效。==</p>
+<h2 id="服务状态"><a href="#服务状态" class="headerlink" title="服务状态"></a>服务状态</h2><p>安装完服务后，可能会显示服务状态不可用，图表也显示不出来，这时候需要重启cm的monitor，等一会儿就行了。</p>
+<p>原因是添加新CSD后未更新。</p>
 ]]></content>
       <categories>
         <category>cdh</category>
       </categories>
       <tags>
         <tag>parcel</tag>
-        <tag>cdh</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>杜威十进分类法</title>
-    <url>/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/</url>
-    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
-<h2 id="目录体系"><a href="#目录体系" class="headerlink" title="目录体系"></a>目录体系</h2><p>000　总论</p>
-<p>100　哲学</p>
-<p>200　宗教</p>
-<p>300　社会科学</p>
-<p>400　语言</p>
-<p>500　自然科学和数学</p>
-<p>600　技术（应用科学）</p>
-<p>700　艺术、美术和装饰艺术</p>
-<p>800　文学</p>
-<p>900　地理、历史及辅助学科</p>
-<p>DC第20版共 4卷，除主表外，还包括附表（辅助表）、索引及使用手册等。</p>
-<p>附表包括：</p>
-<p>①标准<a href="https://baike.baidu.com/item/%E5%A4%8D%E5%88%86%E8%A1%A8">复分表</a>，</p>
-<p>②地区复分表，</p>
-<p>③文学复分表，</p>
-<p>④语言复分表，</p>
-<p>⑤人种、种族、民族复分表，</p>
-<p>⑥语种复分表，</p>
-<p>⑦人物复分表。</p>
-<p><a href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E7%AC%A6%E5%8F%B7">标记符号</a></p>
-<p>DC采用阿拉伯数字作标记符号，并采用小数制（即十进制）的<a href="https://baike.baidu.com/item/%E5%B1%82%E7%B4%AF%E6%A0%87%E8%AE%B0%E5%88%B6/53941462">层累标记制</a>。以三位数(000～999)形成前三级的等级结构。在三位数中，凡带“0” 的号码均表示总论性类目：后二位为“0” 的号码表示一级类（大类），末一位为“0” 的号码表示二级类，凡末尾不带“0” 的三位数号码均属三级类。凡在三位数之后展开的号码，均须在三位数后面加一小数点隔开。</p>
-<p>例如：</p>
-<p>600　应用科学</p>
-<p>630　农业</p>
-<p>631　农业经营</p>
-<p>631.5　作物栽培</p>
-<h2 id="分类特点"><a href="#分类特点" class="headerlink" title="分类特点"></a>分类特点</h2><p>①体系结构完整、严谨，类目详尽，层次清楚，易于理解，便于按学科进行检索。</p>
-<p>②采用严格的层累标记制，类号等级分明，具有较强的助记性，但有时号码过于冗长。</p>
-<p>③首创仿分、复分等具有组配性质的编号法。</p>
-<p>④最先为分类表编配详细的相关索引，提供一条简便的字顺检索的途径。</p>
-<p>⑤ 拥有实力雄厚的管理机构，定期修订，使分类法不断得到更新。</p>
-]]></content>
-      <categories>
-        <category>方法论</category>
-      </categories>
-      <tags>
-        <tag>方法论</tag>
-        <tag>笔记</tag>
-        <tag>分类法</tag>
-        <tag>杜威十进制分类法</tag>
       </tags>
   </entry>
   <entry>
@@ -322,6 +232,117 @@
         <tag>方法论</tag>
         <tag>笔记</tag>
         <tag>Zettelkasten</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>制作parcel包</title>
+    <url>/2021/06/15/%E5%88%B6%E4%BD%9Cparcel%E5%8C%85/</url>
+    <content><![CDATA[<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>Parcel的好处及优势这里就不多赘述，详细内容见<a href="https://github.com/cloudera/cm_ext/wiki/Why-you-should-use-parcels">官方文档</a>。</p>
+<p>==需要特别注意的是要严格按照命名格式操作。==</p>
+<p>下面对Parcel包的制作进行简单介绍。</p>
+<h3 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h3><p>首先我们要了解Parcel包的结构，详细的内容见<a href="https://github.com/cloudera/cm_ext/wiki/Building-a-parcel">官方文档</a>。</p>
+<p>其必须包含两部分内容：</p>
+<ol>
+<li>meta目录。至少包括parcel.json、env.sh。一个是Parcel包的基本信息，一个是环境信息。<br>==注意：在与CDH或其他软件结合使用时，是否需要绑定版本号==</li>
+<li>lib目录。其下就是我们打包的组件存储的位置</li>
+</ol>
+<h3 id="打包"><a href="#打包" class="headerlink" title="打包"></a>打包</h3><p>强烈建议在linux上进行打包，并加上-p参数以保留受保护的信息（如：<strong>软链</strong>、权限等），通过在linux上打包并配置软链、权限……可以避免在control.sh中编写过多的命令，同时避免了非root用户的部分命令的权限问题。</p>
+<p>这一部分需要耐心整理组件安装步骤，抽取出不在组件内（编译后）的内容，比如日志软链，并结合组件的安装进行反复操作。</p>
+<p>不推荐：<del>tar zcvf ATLAS-2.0.0-CDH6.3.2-el7.parcel ATLAS-2.0.0-CDH6.3.2/</del></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar zcvfp ECHO-0.0.1-el7.parcel ECHO-0.0.1/</span><br><span class="line">sha1sum ATLAS-2.0.0-CDH6.3.2-el7.parcel &gt; ATLAS-2.0.0-CDH6.3.2-el7.parcel.sha</span><br></pre></td></tr></table></figure>
+
+
+<p><strong>制作manifest.json</strong></p>
+<p> <code>./cm_ext/make_manifest/make_manifest.py ./ELK/</code></p>
+<p><code>./ELK目录下有对应的parcel包</code></p>
+<p>最后完整的目录如下：</p>
+<p><img src="https://raw.githubusercontent.com/chu-shen/csimg/master/c/s/i/m/g/Pasted%20image%2020210629165244.png"></p>
+<h3 id="校验"><a href="#校验" class="headerlink" title="校验"></a>校验</h3><ol>
+<li>Validate a parcel.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -p parcel.json</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -p ./ATLAS-2.0.0-CDH6.3.2/meta/parcel.json</span><br></pre></td></tr></table></figure>
+</li>
+<li>Validate an alternatives.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -a alternatives.json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Validate an permissions.json file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -r permissions.json</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>Validate a parcel directory <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -d CDH-5.0.0-0.cdh5b2.p0.283/</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -d ./ATLAS-2.0.0-CDH6.3.2/</span><br></pre></td></tr></table></figure>
+</li>
+<li>Validate a parcel file <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ./validator -f CDH-5.0.0-0.cdh5b2.p0.283-el6.parcel</span></span><br><span class="line"></span><br><span class="line">java -jar ./cm_ext/validator/target/validator.jar -f ATLAS-2.0.0-CDH6.3.2-el7.parcel</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://github.com/cloudera/cm_ext/wiki">官方文档</a></p>
+]]></content>
+      <categories>
+        <category>cdh</category>
+      </categories>
+      <tags>
+        <tag>cdh</tag>
+        <tag>parcel</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>杜威十进分类法</title>
+    <url>/2021/05/30/%E6%9D%9C%E5%A8%81%E5%8D%81%E8%BF%9B%E5%88%86%E7%B1%BB%E6%B3%95/</url>
+    <content><![CDATA[<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>《杜威十进分类法》(Dewey Decimal Classification,DC/DDC)受美国圣路易斯市图书馆哈利斯分类法的影响，根据17世纪英国哲学家培根关于知识分类的思想 ，将人类知识 分为记忆（历史）、想象（文艺）和理性（哲学、即科学）三大部分，并将其倒置排列，展开为10个大类（下列类名引自DC第20版）。</p>
+<h2 id="目录体系"><a href="#目录体系" class="headerlink" title="目录体系"></a>目录体系</h2><p>000　总论</p>
+<p>100　哲学</p>
+<p>200　宗教</p>
+<p>300　社会科学</p>
+<p>400　语言</p>
+<p>500　自然科学和数学</p>
+<p>600　技术（应用科学）</p>
+<p>700　艺术、美术和装饰艺术</p>
+<p>800　文学</p>
+<p>900　地理、历史及辅助学科</p>
+<p>DC第20版共 4卷，除主表外，还包括附表（辅助表）、索引及使用手册等。</p>
+<p>附表包括：</p>
+<p>①标准<a href="https://baike.baidu.com/item/%E5%A4%8D%E5%88%86%E8%A1%A8">复分表</a>，</p>
+<p>②地区复分表，</p>
+<p>③文学复分表，</p>
+<p>④语言复分表，</p>
+<p>⑤人种、种族、民族复分表，</p>
+<p>⑥语种复分表，</p>
+<p>⑦人物复分表。</p>
+<p><a href="https://baike.baidu.com/item/%E6%A0%87%E8%AE%B0%E7%AC%A6%E5%8F%B7">标记符号</a></p>
+<p>DC采用阿拉伯数字作标记符号，并采用小数制（即十进制）的<a href="https://baike.baidu.com/item/%E5%B1%82%E7%B4%AF%E6%A0%87%E8%AE%B0%E5%88%B6/53941462">层累标记制</a>。以三位数(000～999)形成前三级的等级结构。在三位数中，凡带“0” 的号码均表示总论性类目：后二位为“0” 的号码表示一级类（大类），末一位为“0” 的号码表示二级类，凡末尾不带“0” 的三位数号码均属三级类。凡在三位数之后展开的号码，均须在三位数后面加一小数点隔开。</p>
+<p>例如：</p>
+<p>600　应用科学</p>
+<p>630　农业</p>
+<p>631　农业经营</p>
+<p>631.5　作物栽培</p>
+<h2 id="分类特点"><a href="#分类特点" class="headerlink" title="分类特点"></a>分类特点</h2><p>①体系结构完整、严谨，类目详尽，层次清楚，易于理解，便于按学科进行检索。</p>
+<p>②采用严格的层累标记制，类号等级分明，具有较强的助记性，但有时号码过于冗长。</p>
+<p>③首创仿分、复分等具有组配性质的编号法。</p>
+<p>④最先为分类表编配详细的相关索引，提供一条简便的字顺检索的途径。</p>
+<p>⑤ 拥有实力雄厚的管理机构，定期修订，使分类法不断得到更新。</p>
+]]></content>
+      <categories>
+        <category>方法论</category>
+      </categories>
+      <tags>
+        <tag>方法论</tag>
+        <tag>笔记</tag>
+        <tag>分类法</tag>
+        <tag>杜威十进制分类法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Microsoft TO DO</title>
+    <url>/2021/08/18/Microsoft%20TO%20DO/</url>
+    <content><![CDATA[<p>&lt;%+ tp.file.rename(tp.frontmatter.title) %&gt;</p>
+<p><code>updated: &lt;%+ tp.file.last_modified_date() %&gt;</code></p>
+<hr>
+<h1 id="lt-tp-frontmatter-title-gt"><a href="#lt-tp-frontmatter-title-gt" class="headerlink" title="&lt;%+ tp.frontmatter.title %&gt;"></a>&lt;%+ tp.frontmatter.title %&gt;</h1><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://blog.mazhangjing.com/2020/06/15/mstodo/">我的每日工作流 —— Microsoft TO-DO 使用指北</a></p>
+]]></content>
+      <categories>
+        <category>方法论</category>
+        <category>工作流</category>
+        <category>ceshi</category>
+        <category>1</category>
+        <category>2</category>
+      </categories>
+      <tags>
+        <tag>方法论</tag>
+        <tag>待办</tag>
+        <tag>时间管理/ceshi</tag>
       </tags>
   </entry>
 </search>
