@@ -22,22 +22,22 @@
 
   <meta name="description" content="ranger集成其他组件的插件安装步骤及注意事项">
 <meta property="og:type" content="article">
-<meta property="og:title" content="测试">
-<meta property="og:url" content="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="Ranger2.x插件集成">
+<meta property="og:url" content="https://chushen.xyz/posts/2c8f6697/index.html">
 <meta property="og:site_name" content="初">
 <meta property="og:description" content="ranger集成其他组件的插件安装步骤及注意事项">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/images/Pasted%20image%2020210701003658.png">
+<meta property="og:image" content="https://chushen.xyz/posts/2c8f6697/images/Pasted%20image%2020210701003658.png">
 <meta property="article:published_time" content="2022-02-10T06:48:00.000Z">
-<meta property="article:modified_time" content="2022-03-10T08:37:40.704Z">
+<meta property="article:modified_time" content="2022-03-13T09:07:44.016Z">
 <meta property="article:author" content="初神">
 <meta property="article:tag" content="集成">
 <meta property="article:tag" content="ranger">
 <meta property="article:tag" content="插件">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/images/Pasted%20image%2020210701003658.png">
+<meta name="twitter:image" content="https://chushen.xyz/posts/2c8f6697/images/Pasted%20image%2020210701003658.png">
 
-<link rel="canonical" href="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/">
+<link rel="canonical" href="https://chushen.xyz/posts/2c8f6697/">
 
 
 <script id="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>测试 | 初</title>
+  <title>Ranger2.x插件集成 | 初</title>
   
 
 
@@ -209,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/">
+    <link itemprop="mainEntityOfPage" href="https://chushen.xyz/posts/2c8f6697/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -222,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          测试
+          Ranger2.x插件集成
         </h1>
 
         <div class="post-meta">
@@ -239,7 +239,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-03-10 16:37:40" itemprop="dateModified" datetime="2022-03-10T16:37:40+08:00">2022-03-10</time>
+                <time title="修改时间：2022-03-13 17:07:44" itemprop="dateModified" datetime="2022-03-13T17:07:44+08:00">2022-03-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,11 +264,66 @@
 
       
         <p>[TOC]</p>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><blockquote>
+<h1 id="Ranger2-x插件集成"><a href="#Ranger2-x插件集成" class="headerlink" title="Ranger2.x插件集成"></a>Ranger2.x插件集成</h1><blockquote>
 <p>本文档最后更新于：**&lt;%+ tp.file.last_modified_date() %&gt;** ，请注意文章时效性！</p>
 </blockquote>
-<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p><a href="/404" data-pjax-state></a></p>
-<h2 id="test"><a href="#test" class="headerlink" title="test"></a>test</h2><p><img src="images/Pasted%20image%2020210701003658.png" alt="Pasted image 20210701003658"></p>
+<h2 id="兼容性"><a href="#兼容性" class="headerlink" title="兼容性"></a>兼容性</h2><p><a href="/posts/20ebc6a7#%E5%85%BC%E5%AE%B9%E6%80%A7%E7%9F%A9%E9%98%B5" data-pjax-state target="_Blank">兼容性矩阵</a></p>
+<h2 id="通用配置"><a href="#通用配置" class="headerlink" title="通用配置"></a>通用配置</h2><h3 id="插件安装位置"><a href="#插件安装位置" class="headerlink" title="插件安装位置"></a>插件安装位置</h3><p><em>后续插件配置的<strong>修改</strong>以及<strong>enable</strong>须在对应主机上执行。</em></p>
+<ul>
+<li>HDFS Plugin应安装在<strong>Name Node</strong>所在主机上</li>
+<li>Hive Plugin应安装在<strong>HiveServer2</strong>所在主机上</li>
+<li>HBase Plugin应安装在<strong>Master和Regional Server</strong>所在主机上</li>
+<li>Knox Plugin应安装在<strong>Knox</strong>所在主机上</li>
+<li>Storm Plugin应安装在<strong>Storm</strong>所在主机上</li>
+<li>Kafka Plugin应安装在<strong>Kafka</strong>所在主机上</li>
+<li>Solr Plugin应安装在<strong>Solr</strong>所在主机上</li>
+<li>YARN plugin应安装在<strong>Resource Manager</strong>所在主机上</li>
+<li>Sqoop plugin应安装在<strong>Sqoop</strong>所在主机上</li>
+<li>Kylin plugin应安装在<strong>Kylin</strong>所在主机上</li>
+<li>Elasticsearch plugin应安装在<strong>Elasticsearch</strong>所在主机上</li>
+</ul>
+<h3 id="配置内容"><a href="#配置内容" class="headerlink" title="配置内容"></a>配置内容</h3><p>修改<code>./ranger-pluginName/install.properties</code>文件，用于自动替换生成的文件内容。如果是集成的是CDH组件，那么<strong>每次重启组件前</strong>都需先执行<code>./ranger-pluginName/enable-pluginName-plugin.sh</code></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">以下必需项后文不再赘述，如有额外配置会指出配置内容。</span><br><span class="line"></span><br><span class="line">**自行执行**：修改`install.properties`文件，然后执行`enable`。所有修改完成后，重启对应组件</span><br></pre></td></tr></table></figure>
+
+
+<p>插件的配置大同小异，包含以下<strong>必需项</strong>：</p>
+<ol>
+<li><strong>POLICY_MGR_URL</strong>=<a target="_blank" rel="noopener" href="http://rangeradmin:6080/">http://rangeradmin:6080</a></li>
+<li><strong>REPOSITORY_NAME</strong>=cs_hdfs # 对应ranger web界面的服务名</li>
+<li><strong>COMPONENT_INSTALL_DIR_NAME</strong>=/opt/cloudera/parcels/CDH/lib/hadoop-hdfs</li>
+<li><strong>XAAUDIT.SOLR.ENABLE</strong>=true # 推荐使用solr。此外还有file、hdfs、es、aws等可供选择</li>
+<li><strong>XAAUDIT.SOLR.URL</strong>=<a target="_blank" rel="noopener" href="http://ip-192-168-222-126.bdvis.org:8983/solr/ranger_audits">http://ip-192-168-222-126.bdvis.org:8983/solr/ranger_audits</a></li>
+<li><strong>XAAUDIT.SOLR.IS_ENABLED</strong>=true</li>
+<li><strong>XAAUDIT.SOLR.SOLR_URL</strong>=<a target="_blank" rel="noopener" href="http://ip-192-168-222-126.bdvis.org:8983/solr/ranger_audits">http://ip-192-168-222-126.bdvis.org:8983/solr/ranger_audits</a></li>
+</ol>
+<p>其他<strong>非必需项</strong>：</p>
+<ol>
+<li>XAAUDIT.SOLR.ZOOKEEPER=NONE # 暂不清楚zk如何配置；URL和zk二选一，启用zk则自动忽略URL</li>
+<li>XAAUDIT.SOLR.FILE_SPOOL_DIR=/var/log/hadoop-hdfs/audit/solr/spool # 保持默认即可</li>
+<li>XAAUDIT.SOLR.USER=ranger_solr # 保持默认即可</li>
+<li>XAAUDIT.SOLR.PASSWORD=NONE # 保持默认即可</li>
+<li>CUSTOM_USER=xx # 保持默认即可。确保用户及组存在并且是你要用的，用于修改权限啥的，详细看enable脚本</li>
+<li>CUSTOM_GROUP=hadoop # 保持默认即可</li>
+<li>检查XAAUDIT.SUMMARY.ENABLE是否为true # 有些插件的配置里没有，待研究源码 #TODO</li>
+</ol>
+<h3 id="服务配置"><a href="#服务配置" class="headerlink" title="服务配置"></a>服务配置</h3><p>如果Ranger没有生成对应的服务，手动配置一个即可。</p>
+<p>Rangerg各组件服务<strong>必配置项</strong>：</p>
+<ul>
+<li><code>policy.download.auth.users/USERNAME</code>。该配置决定插件所启用的组件能否以其启动用户来拉取ranger上的policy配置。如果不配置，将导致插件无法生效，即无法在插件状态界面上看到。</li>
+</ul>
+<h3 id="验证插件生效"><a href="#验证插件生效" class="headerlink" title="验证插件生效"></a>验证插件生效</h3><p>验证安装结果：</p>
+<ul>
+<li>检查<code>/etc/ranger/elasticsearchdev/policycache</code>目录下是否存在<code>REPOSITORY_NAME.json</code>文件。</li>
+<li>在 Ranger Admin Web 门户的 Audit 功能的 Plugins 选项卡页面上检查对应插件状态。</li>
+<li>使用对应软件，验证策略是否生效（可选）</li>
+</ul>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><ul>
+<li>Ranger2.0</li>
+<li>Atlas2.1</li>
+<li>CDH6.x</li>
+</ul>
+<h2 id="Atlas"><a href="#Atlas" class="headerlink" title="Atlas"></a>Atlas</h2><h3 id="Atlas通用配置"><a href="#Atlas通用配置" class="headerlink" title="Atlas通用配置"></a>Atlas通用配置</h3><h4 id="服务配置-1"><a href="#服务配置-1" class="headerlink" title="服务配置"></a>服务配置</h4><p><img src="images/Pasted%20image%2020210701003658.png" alt="Pasted image 20210701003658"></p>
+<h4 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h4><p>见<a href="/posts/2c8f6697#%E9%85%8D%E7%BD%AE%E5%86%85%E5%AE%B9" data-pjax-state target="_Blank">配置内容</a></p>
 
     </div>
 
@@ -279,7 +334,7 @@
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\03\04\测试2\" rel="bookmark">测试2</a></div>
+      <div class="popular-posts-title"><a href="\posts\20ebc6a7\" rel="bookmark">Ranger兼容性</a></div>
     </li>
   </ul>
 
@@ -292,7 +347,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://chushen.xyz/2022/02/10/%E6%B5%8B%E8%AF%95/" title="测试">https://chushen.xyz/2022/02/10/测试/</a>
+    <a href="https://chushen.xyz/posts/2c8f6697/" title="Ranger2.x插件集成">https://chushen.xyz/posts/2c8f6697/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -334,8 +389,8 @@
     <div class="post-nav">
       <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2022/03/04/%E6%B5%8B%E8%AF%952/" rel="next" title="测试2">
-      测试2 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/20ebc6a7/" rel="next" title="Ranger兼容性">
+      Ranger兼容性 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -395,7 +450,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.</span> <span class="nav-text">测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#test"><span class="nav-number">1.2.</span> <span class="nav-text">test</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ranger2-x%E6%8F%92%E4%BB%B6%E9%9B%86%E6%88%90"><span class="nav-number">1.</span> <span class="nav-text">Ranger2.x插件集成</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="nav-number">1.1.</span> <span class="nav-text">兼容性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">通用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E4%BD%8D%E7%BD%AE"><span class="nav-number">1.2.1.</span> <span class="nav-text">插件安装位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E5%86%85%E5%AE%B9"><span class="nav-number">1.2.2.</span> <span class="nav-text">配置内容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.3.</span> <span class="nav-text">服务配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81%E6%8F%92%E4%BB%B6%E7%94%9F%E6%95%88"><span class="nav-number">1.2.4.</span> <span class="nav-text">验证插件生效</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83"><span class="nav-number">1.3.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Atlas"><span class="nav-number">1.4.</span> <span class="nav-text">Atlas</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Atlas%E9%80%9A%E7%94%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.1.</span> <span class="nav-text">Atlas通用配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE-1"><span class="nav-number">1.4.1.1.</span> <span class="nav-text">服务配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.1.2.</span> <span class="nav-text">插件配置</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
